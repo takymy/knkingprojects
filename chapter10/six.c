@@ -57,8 +57,6 @@ int play_game() {
       return -1;
     }
 
-    printf("%c\n", ch);
-
     switch (ch) {
     case '*':
       if (top >= 2) {
@@ -110,6 +108,8 @@ int play_game() {
         while ((ch = getchar()) != '\n' && ch != EOF)
           ;
         return -1;
+      } else if (is_empty()) {
+        printf("Insufficient operands");
       } else {
         printf("Value of expression: %d\n", pop());
         while ((ch = getchar()) != '\n' && ch != EOF)
