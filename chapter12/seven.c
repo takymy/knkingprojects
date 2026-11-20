@@ -20,15 +20,15 @@ int main(void) {
   return 0;
 }
 
-void max_min(int a[], int n, int *max, int *min) {
-  int i;
+void max_min(int *a, int n, int *max, int *min) {
+  int *end = &a[0] + n;
 
   *max = *min = a[0];
-  for (i = 1; i < n; i++) {
-    if (a[i] > *max) {
-      *max = a[i];
-    } else if (a[i] < *min) {
-      *min = a[i];
+  for (; a < end; a++) {
+    if (*a > *max) {
+      *max = *a;
+    } else if (*a < *min) {
+      *min = *a;
     }
   }
 }
